@@ -1,0 +1,140 @@
+body {
+    margin-top: -50px;
+    /*Gør at bildet går helt til toppen*/
+    margin-left: 0;
+    margin-right: 0;
+    /*Gjør at bildet går het til sidene*/
+}
+
+.back-img {
+    background-image: url("bakgrunnmane.jpg");
+    height: 900px;
+    /*Dette bestemmer hvor stor del av skjermen bildet skal dekke*/
+    background-color: blue;
+    /*Hvis bildet ikke er tilgjengelig*/
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /*For at bildet skal dekke hele siden*/
+}
+
+#back-tekst {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+    top: 10%;
+    position: relative;
+    text-align: center;
+}
+
+.menu {
+    height: 760px;
+    /*Gir menyen en spesefik lengde*/
+    width: 0;
+    position: fixed;
+    /*Gjør at menyen blir på samme sted på pc'en hele tiden*/
+    z-index: 1;
+    /*Designer insiden av menyen*/
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    /*Gjør at det som er i menyen blir gjemt*/
+    transition: 0.5s;
+    /*Hvor fort den skal "komme" til syne*/
+    padding-top: 60px;
+    margin-left: 83%;
+    /*Gjør at menyen åpnes på høyresiden*/
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.menu a {
+    /*Hvordaan linkene i menyen skal se ut*/
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    /*hva som skjer når musen er over*/
+    color: black;
+    background-color: whitesmoke;
+}
+
+.menu .closebtn {
+    /*Når man trykker på x'en*/
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+}
+
+img {
+    height: 300px;
+    float: right;
+    margin-right: 2%;
+    border-radius: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+#side1 {
+    /*fikser på bakgrunnsbilde*/
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url(maanelanding.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover
+}
+
+.side1-tekst {
+    /*Lager en ramme for at bakgrunnensbildet ble svakt/foggy*/
+    border: 0px solid;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: 0%;
+    padding: 5%;
+    margin-top: 0px;
+}
+
+#side2 {
+    background-image: url(MannJordMåne.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 0px;
+    height: 900;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.side2-tekst {
+    /*For å få listen til å flyte på seg som en hel liste*/
+    border: 0px solid;
+    margin-left: 45%;
+    padding-top: 5%;
+    padding-bottom: 40%;
+    color: white;
+}
+
+#side2-boks {
+    /*Vil du til månen boksen*/
+    border: 2px solid;
+    margin-left: 70%;
+    margin-right: 4%;
+    padding: 2%;
+    border-radius: 5px;
+    padding-bottom: 100px;
+    /*Gjør at rammen blir lengere og at den ikke følger teksten*/
+    background-color: rgba(255, 255, 255, 0.5)
+}
+
+ol li {
+    color: beige;
+}
+
+ol>li {
+    color: white;
+}
