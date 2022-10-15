@@ -1,0 +1,532 @@
+.boks1{
+    border: 1px solid white;
+    background-color: black;
+    width: 50px;
+    height: 50px;
+    position:absolute;
+    top: 150px;
+    left: 50px;
+    
+}
+.boks2{
+    border: 1px solid white;
+    background-color: black;
+    width: 50px;
+    height: 50px;
+    top: 200px;
+    position: absolute;
+    left:50px ;
+}
+.boks3{
+    border: 1px solid white;
+    background-color: black;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+}
+.boks4{
+    border: 1px solid white;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 150px;
+    left: 100px;
+}
+.boks5{
+    border: 1px solid white;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 200px;
+    left: 100px;
+}
+.boks6{
+    border: 1px solid white;
+    background-color: black;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 250px;
+    left: 100px;
+}
+.boks7{
+    border: 1px solid white;
+    background-color: black;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50px;
+    left: 150px;
+}
+.boks8{
+    border: 1px solid white;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 100px;
+    left: 150px;
+}
+.boks9{
+    border: 1px solid white;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 150px;
+    left: 150px;
+}
+.boks10{
+    border: 1px solid white;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 200px;
+    left: 150px;
+}
+.boks11{
+    border: 1px solid white;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 250px;
+    left: 150px;
+}
+.boks12{
+    border: 1px solid white;
+    background-color: black;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 300px;
+    left: 150px;
+}
+.boks13{
+    border: 1px solid white;
+    background-color: black;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50px;
+    left: 200px; 
+} 
+.boks14{
+    border: 1px solid white;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 100px;
+    left: 200px;
+}
+.boks15{
+    border: 1px solid white;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 150px;
+    left: 200px;
+}
+.boks16{
+    border: 1px solid white;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 200px;
+    left: 200px;
+}
+.boks17{
+    border: 1px solid white;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 250px;
+    left: 200px;
+}
+.boks18{
+    border: 1px solid white;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 300px;
+    left: 200px;
+}
+.boks19{
+    border: 1px solid white;
+    background-color: black;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 350px;
+    left: 200px;
+}
+.boks20{
+    border: 1px solid white;
+    background-color: black;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 100px;
+    left: 250px;
+}
+.boks21{
+    border: 1px solid white;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 150px;
+    left: 250px;
+}
+.boks22{
+    border: 1px solid white;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 200px;
+    left: 250px;
+}
+.boks23{
+    border: 1px solid white;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 250px;
+    left: 250px;
+}
+.boks24{
+    border: 1px solid white;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 300px;
+    left: 250px;
+}
+.boks25{
+    border: 1px solid white;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 350px;
+    left: 250px;
+}
+.boks26{
+    border: 1px solid white;
+    background-color: black;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 400px;
+    left: 250px;
+}
+.boks27{
+    border: 1px solid white;
+    background-color: black;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 150px;
+    left: 300px;
+}
+.boks28{
+    border: 1px solid white;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 200px;
+    left: 300px;
+}
+.boks29{
+    border: 1px solid white;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 250px;
+    left: 300px;
+}
+.boks30{
+    border: 1px solid white;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 300px;
+    left: 300px;
+}
+.boks31{
+    border: 1px solid white;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 350px;
+    left: 300px;
+}
+.boks32{
+    border: 1px solid white;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 400px;
+    left: 300px;
+}
+.boks33{
+    border: 1px solid white;
+    background-color: black;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 450px;
+    left: 300px;
+}
+.boks34{
+    border: 1px solid white;
+    background-color: black;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 100px;
+    left: 350px;
+}
+.boks35{
+    border: 1px solid white;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 150px;
+    left: 350px;
+}
+.boks36{
+    border: 1px solid white;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 200px;
+    left: 350px;
+}
+.boks37{
+    border: 1px solid white;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 250px;
+    left: 350px;
+}
+.boks38{
+    border: 1px solid white;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 300px;
+    left: 350px;
+}
+.boks39{
+    border: 1px solid white;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 350px;
+    left: 350px;
+}
+.boks40{
+    border: 1px solid white;
+    background-color: black;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 400px;
+    left: 350px;
+}
+.boks41{
+    border: 1px solid white;
+    background-color: black;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50px;
+    left: 400px;
+}
+.boks42{
+    border: 1px solid white;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 100px;
+    left: 400px;
+}
+.boks43{
+    border: 1px solid white;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 150px;
+    left: 400px;
+}
+.boks44{
+    border: 1px solid white;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 200px;
+    left: 400px;
+}
+.boks45{
+    border: 1px solid white;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 250px;
+    left: 400px;
+}
+.boks46{
+    border: 1px solid white;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 300px;
+    left: 400px;
+}
+.boks47{
+    border: 1px solid white;
+    background-color: black;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 350px;
+    left: 400px;
+}
+.boks48{
+    border: 1px solid white;
+    background-color: black;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50px;
+    left: 450px;
+}
+.boks49{
+    border: 1px solid white;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 100px;
+    left: 450px;
+}
+.boks50{
+    border: 1px solid white;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 150px;
+    left: 450px;
+}
+.boks51{
+    border: 1px solid white;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 200px;
+    left: 450px;
+}
+.boks52{
+    border: 1px solid white;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 250px;
+    left: 450px;
+}
+.boks53{
+    border: 1px solid white;
+    background-color: black;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 300px;
+    left: 450px;
+}
+.boks54{
+    border: 1px solid white;
+    background-color: black;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 100px;
+    left: 500px;
+}
+.boks55{
+    border: 1px solid white;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 150px;
+    left: 500px;
+}
+.boks56{
+    border: 1px solid white;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 200px;
+    left: 500px;
+}
+.boks57{
+    border: 1px solid white;
+    background-color: black;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 250px;
+    left: 500px;
+}
+.boks58{
+    border: 1px solid white;
+    background-color: black;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 150px;
+    left: 550px;
+}
+.boks59{
+    border: 1px solid white;
+    background-color: black;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 200px;
+    left: 550px;
+}

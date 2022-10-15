@@ -1,0 +1,59 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/005/879/828/non_2x/purple-orange-watercolor-background-pastel-mottled-border-texture-and-blurred-grunge-design-in-old-vintage-backgrounds-free-vector.jpg);
+
+}
+
+#hoved {
+    border: 1px solid gray;
+    margin: 10% 20%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: linear-gradient(-45deg, #f9d5df, #FDE0DF, #F7E1DE,#FAD5D5 );
+    background-size: 10000% 10000%;
+    animation: gradient 10s ease infinite;
+}
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#topptekst{
+    text-align: center;
+}
+
+#meny {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+a {
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    flex-grow: 1;
+    transition-duration: 1s;
+
+    padding: 20px;
+    margin: 20px 10px;
+    border-radius: 30px;
+    background-color: rgba(225, 225, 225, 0.6)
+}
+
+a:hover{
+   background-color: black;
+   color: #bebbff;
+}
+
+
+
