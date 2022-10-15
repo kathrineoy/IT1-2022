@@ -1,0 +1,91 @@
+
+body {
+    background: linear-gradient(-45deg, #ffe278, #c578ff, #ff78b3, #b3ff78);
+    background-size: 5000% 5000%;
+    animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.topp {
+    width: 60%;
+    padding: 40px;
+    border: 2px solid #cccccc;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+}
+
+h1, h2 {
+    transform: rotate(0deg);
+    /*   "utgangspunktet" eller "default"    */
+    transition-duration: 1000ms;
+    /* kan angis i sekunder eller millisekunder  */
+    text-align: center;
+}
+
+h1:hover {
+    transform: rotate(360deg);
+    /* kan angis i "deg"(grader) eller "turn"(antall omdreininger)  */
+}
+
+.menu{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+a {
+    color: black;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+    border: 1px solid;
+    border-radius: 10px;
+    font-family: 'Times New Roman', Times, serif; 
+    margin: 15px;
+    flex-grow: 1;
+}
+
+a:hover{
+    color: #24a66e;
+    text-decoration: underline;
+    font-size:40px;
+    transition: all 700ms;
+}
+
+#hoved {
+    margin-left: 25px;
+    margin-right: 25px;
+    padding: 40px;
+    border: 2px solid #cccccc;
+    border-radius: 20px;
+    background:
+    radial-gradient(white, transparent),
+    radial-gradient(white , transparent),
+    linear-gradient(rgba(255, 255,255 ,0.3), transparent 0),
+    linear-gradient(45deg, transparent 74px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 77px, transparent 109px),
+    linear-gradient(-45deg, transparent 75px, transparent 76px, #a4a4a4 76px, #a4a4a4 77px, transparent 78px, transparent 109px),
+    rgba(255, 255, 255, 0.5);
+    background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
+    background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+    
+}
+
+.topptekst{
+    text-align: center;
+}
+
+
