@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skuddår</title>
+
+    <style>
+        body{
+            text-align: center;
+            background-image:url(nattehimmel-feature-1000x667.jpeg);
+            background-repeat: no-repeat;
+            background-size: 1450px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Skuddår eller ikke skuddår?</h1>
+    <input type="Number" , id="valgaar" , placeholder="Velg et år">
+    <button id="btn">Se svar</button>
+    <h2 id="txtSvar"></h2>
+    
+
+    <script>
+        var aar = document.getElementById("valgaar")
+        btn = document.getElementById("btn")
+        txtSvar = document.getElementById("txtSvar")
+
+        btn.onclick = function() {
+            aar = Number(aar.value)
+            var skuddaar = aar % 4
+            if (skuddaar == 0) {
+                txtSvar.innerHTML = ("Det er et skuddår")
+            }
+            else {
+                txtSvar.innerHTML = ("Det er ikke ett skuddår")
+            }
+        }
+
+    </script>
+</body>
+
+</html>
