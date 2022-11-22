@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hei, Hallo eller God dag</title>
+</head>
+<body>
+    <button id="btn">Hei, Hallo eller God dag</button>
+  
+    <h1 id="txt"></h1>
+    <script>
+        btn = document.getElementById("btn");
+        txt = document.getElementById("txt")
+        btn.onclick = function tilfeldigHilsen(){
+            tall = Math.floor(Math.random ()*3)
+
+            if (tall==1){
+                txt.innerHTML =("Hei")
+            }
+            else if (tall==2){
+                txt.innerHTML = ("Hallo")
+            }
+            else {
+                txt.innerHTML = ("God dag")
+            }
+            
+        }
+    </script>
+    
+</body>
+</html>

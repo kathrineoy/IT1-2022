@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ung eller gammel</title>
+    <style>
+        body{
+            text-align: center;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 6px;
+        }
+        h1{
+            grid-column: span 4;
+        }
+        p {
+            border: 1px solid;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: lightpink;
+        
+        }
+        input{
+            margin-top: 5%;
+            border-radius: 10px;
+            padding: 15px;
+        }
+   
+    </style>
+</head>
+<body>
+    <h1>Er du ung eller gammel</h1>
+
+    <div></div>
+    <input type="text" placeholder="Hva er navnet ditt?" id="navn">
+    <input type="text" placeholder="Hvor gammel er du?" id="alder">
+    <div></div>
+    <div></div>
+    <p id="btn">Klikk</p>
+    <script>
+        var navn;
+        var alder
+        btn = document.getElementById("btn")
+
+        btn.onclick = function(){
+            navn = document.getElementById("navn").value
+            alder = document.getElementById("alder").value
+            if(alder<30){
+                document.write("Hei ", navn , " du er ung")
+            }
+            else{
+                document.write("Hei ", navn , " du er gammel")
+            }
+        }
+    </script>
+    
+</body>
+</html>
