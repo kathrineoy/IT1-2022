@@ -48,16 +48,20 @@ h1:hover {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-a {
+p {
     color: black;
     text-align: center;
     padding: 14px;
-    text-decoration: none;
     border: 1px solid;
     border-radius: 10px;
     font-family: 'Times New Roman', Times, serif; 
     margin: 15px;
     flex-grow: 1;
+}
+
+a{
+    color: black;
+    text-decoration: none;
 }
 
 a:hover{
@@ -88,5 +92,7 @@ a:hover{
 .topptekst{
     text-align: center;
 }
+
+
 
 
