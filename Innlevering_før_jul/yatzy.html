@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="yatzy.css">
+    <title>Yatzy</title>
+
+</head>
+
+<body>
+    <div id="overskriftdiv">
+    <img src="yahtzee.png" alt="Yatzy logo" id="overskriftimg">
+    </div>
+    <br>
+    <br>
+    <div id="hoved">
+        <div></div>
+        <div>
+            <table id="spillet">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th><img src="spiller1.png" alt="Sjetonger" id="spiller1img"></th>
+                        <th><img src="spiller2.png" alt="En sløyfe" id="spiller2img"></th>
+                        <th><img src="spiller3.png" alt="Kortstokk" id="spiller3img"></th>
+                        <th><img src="spiller4.png" alt="Et martiniglass" id="spiller4img"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <!--Med onclick kaller jeg funksjonen og det funskjonen vil gjøre skjer når man klikker på ruten enere, toere, trere osv. Dette er det samme jeg gjør for å kalle funksjonene i hele HTML-->
+                        <td onclick="enTilSeks('enere', 1)">Enere</td>
+                        <td class="enere P1"> 0 </td>
+                        <td class="enere P2"> 0 </td>
+                        <td class="enere P3"> 0 </td>
+                        <td class="enere P4"> 0 </td>
+                    </tr>
+                    <tr>
+                        <td onclick="enTilSeks('toere', 2)">Toere</td>
+                        <td class="toere P1"> 0 </td>
+                        <td class="toere P2"> 0 </td>
+                        <td class="toere P3"> 0 </td>
+                        <td class="toere P4"> 0 </td>
+                    </tr>
+                    <tr>
+                        <td onclick="enTilSeks('treere', 3)">Treere</td>
+                        <td class="treere P1"> 0 </td>
+                        <td class="treere P2"> 0 </td>
+                        <td class="treere P3"> 0 </td>
+                        <td class="treere P4"> 0 </td>
+                    </tr>
+                    <tr>
+                        <td onclick="enTilSeks('firere', 4)">Firere</td>
+                        <td class="firere P1"> 0 </td>
+                        <td class="firere P2"> 0 </td>
+                        <td class="firere P3"> 0 </td>
+                        <td class="firere P4"> 0 </td>
+                    </tr>
+                    <tr>
+                        <td onclick="enTilSeks('femere', 5)">Femere</td>
+                        <td class="femere P1"> 0 </td>
+                        <td class="femere P2"> 0 </td>
+                        <td class="femere P3"> 0 </td>
+                        <td class="femere P4"> 0 </td>
+                    </tr>
+                    <tr>
+                        <td onclick="enTilSeks('seksere', 6)">Seksere</td>
+                        <td class="seksere P1"> 0 </td>
+                        <td class="seksere P2"> 0 </td>
+                        <td class="seksere P3"> 0 </td>
+                        <td class="seksere P4"> 0 </td>
+                    </tr>
+                    <tr>
+                        <th class="sum">Sum</th>
+                        <th class=" sum P1"> 0 </th>
+                        <th class="sum P2"> 0 </th>
+                        <th class="sum P3"> 0 </th>
+                        <th class="sum P4"> 0 </th>
+                    </tr>
+                    <tr>
+                        <th class="bonus">Bonus</th>
+                        <th class="bonus P1"> 0 </th>
+                        <th class="bonus P2"> 0 </th>
+                        <th class="bonus P3"> 0 </th>
+                        <th class="bonus P4"> 0 </th>
+                    </tr>
+                    <tr>
+                        <td onclick="ettPar('ett')">1 par</td>
+                        <td class="ettPar P1"> 0 </td>
+                        <td class="ettPar P2"> 0 </td>
+                        <td class="ettPar P3"> 0 </td>
+                        <td class="ettPar P4"> 0 </td>
+                    </tr>
+                    <tr>
+                        <td onclick="ettPar('to')">2 par</td>
+                        <td class="toPar P1"> 0 </td>
+                        <td class="toPar P2"> 0 </td>
+                        <td class="toPar P3"> 0 </td>
+                        <td class="toPar P4"> 0 </td>
+                    </tr>
+                    <tr>
+                        <td onclick="treLike()">3 like</td>
+                        <td class="treLike P1"> 0 </td>
+                        <td class="treLike P2"> 0 </td>
+                        <td class="treLike P3"> 0 </td>
+                        <td class="treLike P4"> 0 </td>
+                    </tr>
+                    <tr>
+                        <td onclick="fireLike()">4 like</td>
+                        <td class="fireLike P1"> 0 </td>
+                        <td class="fireLike P2"> 0 </td>
+                        <td class="fireLike P3"> 0 </td>
+                        <td class="fireLike P4"> 0 </td>
+                    </tr>
+                    <tr>
+                        <td onclick="litenStraight()">Liten straight</td>
+                        <td class="litenStraightSum P1"> 0 </td>
+                        <td class="litenStraightSum P2"> 0 </td>
+                        <td class="litenStraightSum P3"> 0 </td>
+                        <td class="litenStraightSum P4"> 0 </td>
+                    </tr>
+                    <tr>
+                        <td onclick="storStraight()">Stor straight</td>
+                        <td class="storStraightSum P1"> 0 </td>
+                        <td class="storStraightSum P2"> 0 </td>
+                        <td class="storStraightSum P3"> 0 </td>
+                        <td class="storStraightSum P4"> 0 </td>
+                    </tr>
+                    <tr>
+                        <td onclick="hus()">Hus</td>
+                        <td class="hus P1"> 0 </td>
+                        <td class="hus P2"> 0 </td>
+                        <td class="hus P3"> 0 </td>
+                        <td class="hus P4"> 0 </td>
+                    </tr>
+                    <tr>
+                        <td onclick="sjanse()">Sjanse</td>
+                        <td class="sjanse P1"> 0 </td>
+                        <td class="sjanse P2"> 0 </td>
+                        <td class="sjanse P3"> 0 </td>
+                        <td class="sjanse P4"> 0 </td>
+                    </tr>
+                    <tr>
+                        <th onclick="yatzy()" class="yatzy">Yatzy</th>
+                        <th class="yatzy P1"> 0 </th>
+                        <th class="yatzy P2"> 0 </th>
+                        <th class="yatzy P3"> 0 </th>
+                        <th class="yatzy P4"> 0 </th>
+                    </tr>
+                    <tr>
+                        <th onclick="totalSum()" class="totalSum">Total sum</th>
+                        <th class="totalSum P1"> 0 </th>
+                        <th class="totalSum P2"> 0 </th>
+                        <th class="totalSum P3"> 0 </th>
+                        <th class="totalSum P4"> 0 </th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div></div>
+        <div>
+            <div class="container">
+                <img src="buttonimg.jpeg" alt="" class="btnimg">
+                <button id="btn">Kast</button>
+            </div>
+            <br>
+            <table class="terninger">
+                <tbody>
+                    <tr>
+                        <th> Terning 1 <br> <input type="checkbox" id="keep1"></th>
+                        <td id="roll1"></td>
+                    </tr>
+                    <tr>
+                        <th> Terning 2 <br> <input type="checkbox" id="keep2"></th>
+                        <td id="roll2"></td>
+                    </tr>
+                    <tr>
+                        <th> Terning 3 <br> <input type="checkbox" id="keep3"></th>
+                        <td id="roll3"></td>
+                    </tr>
+                    <tr>
+                        <th> Terning 4 <br> <input type="checkbox" id="keep4"></th>
+                        <td id="roll4"></td>
+                    </tr>
+                    <tr>
+                        <th> Terning 5 <br> <input type="checkbox" id="keep5"></th>
+                        <td id="roll5"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <h2 id="hvemSinTur"></h2>
+        </div>
+    </div>
+    <!--For å lage siden litt større og gi luft under tabelen-->
+    <br><br><br><br><br>
+
+    <script>
+        let btn = document.getElementById("btn");
+        let rolls = [];
+        let imgTerning = [" ",
+            "<img src='terning1.png' alt=''>",
+            "<img src='terning2.png' alt=''>",
+            "<img src='terning3.png' alt=''>",
+            "<img src='terning4.png' alt=''>",
+            "<img src='terning5.png' alt=''>",
+            "<img src='terning6.png' alt=''>"
+        ];
+        //Array mengde av bilder fra 0-6 der 0 ikke er definert for at når roll er 1 skal den velge bildet på plasseringen 1, kan minne om det vi gjorde med passordet
+        let keep1 = document.getElementById("keep1");
+        let keep2 = document.getElementById("keep2");
+        let keep3 = document.getElementById("keep3");
+        let keep4 = document.getElementById("keep4");
+        let keep5 = document.getElementById("keep5");
+        let kast = 0;
+        let spiller = [
+            "P1",
+            "P2",
+            "P3",
+            "P4"
+        ];
+        let tur = 0
+        let hvemSinTur = document.getElementById("hvemSinTur")
+
+        btn.onclick = function () {
+            for (i = 1; i < 6; i++) {
+                //Gir meg 5 verdier som jeg swetter inn i treningen og markeringene
+                let kept = document.getElementById("keep" + i).checked;
+                //ser om check boksen er checka eller ikke, hvis den ikke er checka gjør den if løkken nedenfor som er å kaste terningene
+
+                if (kept == false) {
+                    let terning = parseInt((Math.random() * 6) + 1);
+                    document.getElementById("roll" + i).innerHTML = imgTerning[terning];
+                    //Gir meg 5 terninger med 5 verdier ved å hente idene og legger til 1 hver gang ved hjel av i
+                    rolls[i] = terning;
+                    console.log(rolls[i]);
+                }
+            }
+            kast++;
+            if (kast == 3) {
+                document.getElementById("btn").disabled = true;
+                document.getElementById("btn").style.backgroundColor = "black"
+                //Når terningen er kastet 3 ganger forsvinner knappen
+            }
+        }
+
+        function enTilSeks(hvor, nummer) {
+            sum = 0;
+            //Gjør at funksjonen går 5 ganger istedet for å måtte ha fem funksjoner, det er fem ganger pga fem terninger
+            for (i = 1; i < 6; i++) {
+                sisterull = rolls[i];
+
+                if (sisterull == nummer) {
+                    sum += sisterull;
+                    console.log(hvor + " " + spiller[tur]);
+                    document.getElementsByClassName(hvor + " " + spiller[tur])[0].innerHTML = sum;//plaserer tallene 
+                }
+            }
+            //Gjør at summen øker hver gang spieren får noe poeng i rutene over
+            let forjeSum = document.getElementsByClassName("sum " + spiller[tur])[0].innerHTML;
+            let naaSum = Number(forjeSum) + sum;
+            document.getElementsByClassName("sum " + spiller[tur])[0].innerHTML = naaSum;
+
+            if (naaSum >= 63) {
+                document.getElementsByClassName("bonus " + spiller[tur])[0].innerHTML = 50;
+                //Gjør at hvis sum er over 63 får spilleren 50 poeng
+            }
+            bytt()
+        }
+        //Gjør at alle sumparrene plasseres inne her og hjelper til å sortere fra høyest til lavest
+        let ettParSum = [0, 0, 0, 0];
+        let par = 0;
+        function ettPar(enEllerTo) {
+            //Alle if løkkene skjekker om terningene er det samme og hvis de er det ganger jeg den konstante terningen i if løkken med 2
+            if (rolls[1] == rolls[5] ||
+                rolls[1] == rolls[2] ||
+                rolls[1] == rolls[3] ||
+                rolls[1] == rolls[4]) {
+                ettParSum[0] = rolls[1] * 2;
+                par++;
+            }
+
+            if (rolls[2] == rolls[3] ||
+                rolls[2] == rolls[4] ||
+                rolls[2] == rolls[5]) {
+                ettParSum[1] = rolls[2] * 2;
+                par++;
+            }
+
+            if (rolls[3] == rolls[4] ||
+                rolls[3] == rolls[5]) {
+                ettParSum[2] = rolls[3] * 2;
+                par++;
+            }
+
+            if (rolls[4] == rolls[5]) {
+                ettParSum[3] = rolls[4] * 2;
+                par++;
+            }
+            //Sorterer parrene fra høyest til lavest og velger det høyeste parret og legger det inn i tabellen
+            ettParSum.sort(function (a, b) { return a - b });
+            //Hvis funksjonen ser at det er to eller flere par går den til funksjonen to og flytter seg til To par oppe i tabellen
+            if (par >= 2 && enEllerTo == "to") {
+                toPar()
+            }
+            //Hvis det bare er ett par printer den ut summen til det ene parret som den finner. Den bruker arrayet ettParSum til å legge ut det høyeste parret, og funksjonen ettParSum.sort. Og bytter hvem sin tur det er
+            else {
+                document.getElementsByClassName("ettPar " + spiller[tur])[0].innerHTML = ettParSum[ettParSum.length - 1];
+                bytt();
+                //Bytt er funskjonen helt til slutt som gjør at det byttes tur
+            }
+
+            //restarter funskjonen
+            ettParSum = [0, 0, 0, 0];
+            par = 0;
+
+        }
+
+        function toPar() {
+            //Skjekker at de to parrene som er funnet ikke er like for hvis de er det er det enten 3 like eller fire like, og hvis de ikke er like legger funskjonen parrene sammen
+            if (ettParSum[ettParSum.length - 1] != ettParSum[ettParSum.length - 2]) {
+                toParSum = ettParSum[ettParSum.length - 1] + ettParSum[ettParSum.length - 2]
+                document.getElementsByClassName("toPar " + spiller[tur])[0].innerHTML = toParSum;
+            }
+            toParSum = 0
+            bytt()
+            //Bytt er funskjonen helt til slutt som gjør at det byttes tur
+
+        }
+
+        function treLike() {
+            //Alle if løkkene skjekker om terningene er det samme og hvis de er det ganger jeg den konstatnte terningen med 3 og printer ut summen
+            if (rolls[1] == rolls[2] && rolls[1] == rolls[3] ||
+                rolls[1] == rolls[2] && rolls[1] == rolls[4] ||
+                rolls[1] == rolls[2] && rolls[1] == rolls[5] ||
+                rolls[1] == rolls[3] && rolls[1] == rolls[4] ||
+                rolls[1] == rolls[3] && rolls[1] == rolls[5] ||
+                rolls[1] == rolls[4] && rolls[1] == rolls[5]) {
+                treLikeSum = rolls[1] * 3;
+                document.getElementsByClassName("treLike " + spiller[tur])[0].innerHTML = treLikeSum;
+            }
+            if (rolls[2] == rolls[3] && rolls[2] == rolls[4] ||
+                rolls[2] == rolls[3] && rolls[2] == rolls[5] ||
+                rolls[2] == rolls[4] && rolls[2] == rolls[5]) {
+                treLikeSum = rolls[2] * 3;
+                document.getElementsByClassName("treLike " + spiller[tur])[0].innerHTML = treLikeSum;
+            }
+            if (rolls[3] == rolls[4] && rolls[3] && rolls[5]) {
+                treLikeSum = rolls[3] * 3;
+                document.getElementsByClassName("treLike " + spiller[tur])[0].innerHTML = treLikeSum;
+            }
+            bytt()
+            //Bytt er funskjonen helt til slutt som gjør at det byttes tur
+        }
+
+        function fireLike() {
+            //Alle if løkkene skjekker om terningene er det samme og hvis de er det legger de med sammen
+            if (rolls[1] == rolls[2] && rolls[1] == rolls[3] && rolls[1] == rolls[4] ||
+                rolls[1] == rolls[2] && rolls[1] == rolls[3] && rolls[1] == rolls[5] ||
+                rolls[1] == rolls[2] && rolls[1] == rolls[4] && rolls[1] == rolls[5] ||
+                rolls[1] == rolls[3] && rolls[1] == rolls[4] && rolls[1] == rolls[5]) {
+                fireLikeSum = rolls[1] * 4;
+                document.getElementsByClassName("fireLike " + spiller[tur])[0].innerHTML = fireLikeSum;
+            }
+            if (rolls[2] == rolls[3] && rolls[2] == rolls[4] && rolls[1] == rolls[5]) {
+                fireLikeSum = rolls[2] * 4;
+                document.getElementsByClassName("fireLike " + spiller[tur])[0].innerHTML = fireLikeSum;
+            }
+            bytt()
+            //Bytt er funskjonen helt til slutt som gjør at det byttes tur
+        }
+
+        function litenStraight() {
+            //if løkken skjekker om terningene er det samme og hvis de er det skriver den ut 15 poeng
+            if (rolls[1] == 1 || rolls[2] == 1 || rolls[3] == 1 || rolls[4] == 1 || rolls[5] == 1 &&
+                rolls[1] == 2 || rolls[2] == 2 || rolls[3] == 2 || rolls[4] == 2 || rolls[5] == 2 &&
+                rolls[1] == 3 || rolls[2] == 3 || rolls[3] == 3 || rolls[4] == 3 || rolls[5] == 3 &&
+                rolls[1] == 4 || rolls[2] == 4 || rolls[3] == 4 || rolls[4] == 4 || rolls[5] == 4 &&
+                rolls[1] == 5 || rolls[2] == 5 || rolls[3] == 5 || rolls[4] == 5 || rolls[5] == 5) {
+                document.getElementsByClassName("litenStraightSum " + spiller[tur])[0].innerHTML = 15;
+            }
+            //Hvis ikke printer den ut 0 poeng i ruten som det er sin tur
+            else {
+                document.getElementsByClassName("litenStraightSum " + spiller[tur])[0].innerHTML = 0;
+            }
+            bytt()
+            //Bytt er funskjonen helt til slutt som gjør at det byttes tur
+        }
+
+        function storStraight() {
+            // if løkken skjekker om terningene er det samme og hvis de er det skriver den ut 20 poeng
+            if (rolls[1] == 6 || rolls[2] == 6 || rolls[3] == 6 || rolls[4] == 6 || rolls[5] == 6 &&
+                rolls[1] == 2 || rolls[2] == 2 || rolls[3] == 2 || rolls[4] == 2 || rolls[5] == 2 &&
+                rolls[1] == 3 || rolls[2] == 3 || rolls[3] == 3 || rolls[4] == 3 || rolls[5] == 3 &&
+                rolls[1] == 4 || rolls[2] == 4 || rolls[3] == 4 || rolls[4] == 4 || rolls[5] == 4 &&
+                rolls[1] == 5 || rolls[2] == 5 || rolls[3] == 5 || rolls[4] == 5 || rolls[5] == 5) {
+                document.getElementsByClassName("storStraightSum " + spiller[tur])[0].innerHTML = 20;
+            }
+            //Hvis ikke setter den ut 0 poeng
+            else {
+                document.getElementsByClassName("storStraightSum " + spiller[tur])[0].innerHTML = 0;
+            }
+            bytt()
+            //Bytt er funskjonen helt til slutt som gjør at det byttes tur
+        }
+
+        function hus() {
+            //Sorterer hele og det gjør at den starter på nytt og dermed går fra 0-4 0og ikke 1-5
+            rolls.sort();
+            //Skjekker om terningene er lik og hvis de er det legger de dem sammen 
+            if ((rolls[0] == rolls[1]) && (rolls[2] == rolls[4])) {
+                husSum = (rolls[0] * 2) + (rolls[2] * 3);
+                document.getElementsByClassName("hus " + spiller[tur])[0].innerHTML = husSum;
+            }
+            else if ((rolls[0] == rolls[2]) && (rolls[3] == rolls[4])) {
+                husSum = (rolls[3] * 2) + (rolls[0] * 3);
+                document.getElementsByClassName("hus " + spiller[tur])[0].innerHTML = husSum;
+            }
+            else {
+                document.getElementsByClassName("hus " + spiller[tur])[0].innerHTML = 0;
+            }
+            bytt()
+            //Bytt er funskjonen helt til slutt som gjør at det byttes tur
+        }
+
+        function sjanse() {
+            //Legger alle terningene sammen
+            sjanseSum = rolls[1] + rolls[2] + rolls[3] + rolls[4] + rolls[5]
+            document.getElementsByClassName("sjanse " + spiller[tur])[0].innerHTML = sjanseSum;
+            bytt()
+            //Bytt er funskjonen helt til slutt som gjør at det byttes tur
+        }
+
+        function yatzy() {
+            //Skjekker om alle ternigene er like og printer ut 50 poeng
+            if (rolls[1] == rolls[2] && rolls[1] == rolls[3] && rolls[1] == rolls[4] && rolls[1] == rolls[5]) {
+                document.getElementsByClassName("yatzy " + spiller[tur])[0].innerHTML = 50;
+            }
+            bytt()
+            //Bytt er funskjonen helt til slutt som gjør at det byttes tur
+        }
+
+        //Regner ut totalsummen til alle spullereren, dette gjøres ved å hente alle tallene fra classene uten om sum og leger dem sammen. 
+        let sumP1;
+        let totalSumP1 = 0;
+        let sumP2;
+        let totalSumP2 = 0;
+        let sumP3;
+        let totalSumP3 = 0;
+        let sumP4;
+        let totalSumP4 = 0;
+        function totalSum() {
+            sumP1 = document.querySelectorAll(".P1:not(.sum)")
+            for (i=0; i<17;i++) {
+                console.log(sumP1[i].innerHTML)
+                totalSumP1 += Number(sumP1[i].innerHTML)
+            }
+            document.getElementsByClassName("totalSum P1 ")[0].innerHTML = totalSumP1;
+
+            sumP2 = document.querySelectorAll(".P2:not(.sum)")
+            for (i=0; i<17;i++) {
+                console.log(sumP2[i].innerHTML)
+                totalSumP2 += Number(sumP2[i].innerHTML)
+            }
+            document.getElementsByClassName("totalSum P2 ")[0].innerHTML = totalSumP2;
+
+            sumP3 = document.querySelectorAll(".P3:not(.sum)")
+            for (i=0; i<17;i++) {
+                console.log(sumP3[i].innerHTML)
+                totalSumP3 += Number(sumP3[i].innerHTML)
+            }
+            document.getElementsByClassName("totalSum P3 ")[0].innerHTML = totalSumP3;
+
+            sumP4 = document.querySelectorAll(".P4:not(.sum)")
+            for (i=0; i<17;i++) {
+                console.log(sumP4[i].innerHTML)
+                totalSumP4 += Number(sumP4[i].innerHTML)
+            }
+            document.getElementsByClassName("totalSum P4 ")[0].innerHTML = totalSumP4;
+        }
+
+        //Endrer hvem sin tur det er 
+        function bytt() {
+            //Skjekker om vareablen tur er lik 3 og hvis den er det nuller den det ut
+            if (tur == 3) {
+                tur = 0;
+            }
+            //Hvis tur ikke er lik 3 legger den på en 
+            else {
+                tur++;
+            }
+            kast = 0;
+            document.getElementById("btn").disabled = false;
+            document.getElementById("btn").style.backgroundColor = "gold"
+            hvemSinTur.innerHTML = spiller[tur] + " sin tur"
+            //Gjør kast om til 0 og 
+            for (i = 1; i < 6; i++) {
+                //resetter inputen, fjerner de gamle terningene
+                document.getElementById("keep" + i).checked = false;
+                document.getElementById("roll" + i).innerHTML = " ";
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

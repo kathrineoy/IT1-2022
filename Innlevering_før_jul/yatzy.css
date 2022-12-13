@@ -1,0 +1,99 @@
+body{
+    background-image: url(Casinobilde-\ emma\ design.webp);
+}
+#overskriftimg{
+    height: 200px;
+    width: auto;
+
+}
+#overskriftdiv{
+    text-align: center;
+}
+#hoved{
+    display: grid;
+    grid-template-columns:repeat(6, 1fr);
+}
+
+table{
+    background-color: black;
+    border-collapse:collapse;
+    width: max-content;
+    color: white;
+}
+
+.terninger{
+    border: 1px solid black;
+    padding: 1px;
+   
+}
+th, td{
+    border: 1px solid white;
+    padding: 6px;
+}
+img{
+    width: 50px;
+}
+
+#btn{
+    font-size: large;
+}
+.totalSum{
+    color: red;
+}
+.sum{
+    color: red;
+}
+.bonus{
+    color: red;
+}
+.yatzy{
+    color: red;
+}
+#spiller1img{
+    height: 45px;
+    width: auto;
+    padding: 5px;
+}
+#spiller2img{
+    height: auto;
+    width: 70px;
+    padding: 5px;
+}
+#spiller3img{
+    height: 45px;
+    width: auto;
+    padding: 5px;
+
+}
+#spiller4img{
+    height: auto;
+    width: 50px;
+    padding: 5px;
+}
+h2{
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: black;
+    color: white;
+    margin-right: 150px;
+}
+.container{
+    position:relative;
+    width: 250;
+    left: -50px;
+}
+#btn{
+    position: absolute;
+    width: 80px;
+    left: 115px;
+    top: 150px;
+    background-color: gold;
+    border-radius: 5px;
+}
+.btnimg{
+    width: 300px;
+    position: static;
+    border-radius: 5px;
+}
+
