@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spørreundersøkelse</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <audio id="lydRiktigSvar" src="correct-6033.mp3"></audio>
+    <audio id="lydFeilSvar" src="wrong-answer.mp3"></audio>
+    <br>
+    <h1 id="sporsmaal">Her er sprøsmål</h1>
+    <label for="inpSvar" id="inpSvarTxt">Skriv 1, 2 eller 3 ved svar alternativer eller trykk på det:</label>
+    <br> <br>
+
+
+    <input id="inpSvar" type="text" placeholder="Skriv svar">
+    <input id="inpNyttSpmSvar" type="text" hidden="true">
+    <input type="text" id="nyttBilde" hidden="true">
+
+    <button id="btnAdmin" hidden="true"> Bli administrator</button>
+    <button id="btnOK">Klikk når du er klar</button>
+    <button id="btnNeste"> Neste</button>
+    <button id="btnForrige"> Forrige</button>
+
+    <br> <br>
+    <p id="Alt1" onclick="alternativer(1)"> </p>
+    <p id="Alt2" onclick="alternativer(2)"> </p>
+    <p id="Alt3" onclick="alternativer(3)"> </p>
+    <br>
+
+    <img src="" alt="Fant ikke" id="imgBilde" width="400px">
+    
+
+    <script>
+        //orginal oppsett
+        var sporsmaal = document.getElementById("sporsmaal");
+        var inpSvar = document.getElementById("inpSvar");
+        var btnOK = document.getElementById("btnOK");
+        var btnNeste = document.getElementById("btnNeste");
+        var btnForrige = document.getElementById("btnForrige");
+        var spmNr = 0
+        var imgBilde = document.getElementById("imgBilde");
+        var Alt1 = document.getElementById("Alt1");
+        var Alt2 = document.getElementById("Alt2");
+        var Alt3 = document.getElementById("Alt3");
+        var lydRiktigSvar = document.getElementById("lydRiktigSvar");
+        var lydFeilSvar = document.getElementById("lydFeilSvar");
+        btnForrige.disabled = true;
+        var inpSvarTxt = document.getElementById("inpSvarTxt")
+        //til abmin oppsett
+        var btnAdmin = document.getElementById("btnAdmin");
+        var inpNyttSpmSvar = document.getElementById("inpNyttSpmSvar");
+        var nyttBilde = document.getElementById("nyttBilde")
+
+
+        var spmOgSvar = [
+            {a: "Hva er verdens høyeste fjell?",alternativ:[ "1. Mount Everest","2. Mont Blanc", "3. Kilimanjaro"], RiktigSvar: "1", bilde:"https://media.architecturaldigest.com/photos/5af30475c29da93330bbfe90/3:2/w_3000,h_2000,c_limit/GettyImages-478627080.jpg"},
+            {a: "Hvilket kontinent er størst?", alternativ:[ "","",""], RiktigSvar: "Asia", bilde:"https://media.snl.no/media/177553/standard_verdensdeler-og-verdenshav.png"},
+            {a: "Hvem er dette på bildet?", alternativ:[ "1. Frank Sinatra", "2. Leonardo Dicaprio", "3. Jhonny Deep"], RiktigSvar: "3", bilde:"https://nationaltoday.com/wp-content/uploads/2022/05/107-Johnny-Depp-640x514.jpg" },
+            {a: "Hva er hovedstaden i Frankrike?", alternativ:[ "1. Nice", "2. Paris", "3. Versaille"], RiktigSvar: "2", bilde:""},
+            {a: "Hva er den største planeten i solsystemet?", alternativ:[ "","", ""], RiktigSvar: "Jupiter", bilde:"https://www.astromaria.no/wp-content/uploads/2021/01/Jupiter-feature-1000x667-1.jpg"},
+            {a: "Hvilket dyr er kjent for å være intelligente?", alternativ:[ "","", ""], RiktigSvar: "Elefant", bilde: ""}
+        ]
+
+
+        function settOppSkjermbilde(){
+            sporsmaal.innerHTML = spmOgSvar[spmNr].a;//Henter ut elementet 1 i array og 1 i objektet
+            imgBilde.src = spmOgSvar[spmNr].bilde; // Henter det første bilde
+            if(spmOgSvar[spmNr].bilde == ""){
+                imgBilde.alt = ""
+            }//funksjon som gjør at hvis det ikke er noe bilde vises ingen bilde
+            Alt1.innerHTML = spmOgSvar[spmNr].alternativ[0];
+            Alt2.innerHTML = spmOgSvar[spmNr].alternativ[1];
+            Alt3.innerHTML = spmOgSvar[spmNr].alternativ[2];
+            inpSvar.value = ("")
+        }
+
+        settOppSkjermbilde()
+
+        function skjekkSvar(){
+            //if(inpSvar.value.toLowerCase() == spmOgSvar[spmNr].RiktigSvar.toLowerCase())
+            if(inpSvar.value.toLowerCase() == spmOgSvar[spmNr].RiktigSvar.toLowerCase()){
+                lydRiktigSvar.play();
+                alert("riktig :)")
+                nesteSpm()
+            }          
+            else{
+                lydFeilSvar.play();
+                alert("Feil, du er dum")
+            }
+            if(spmOgSvar[spmNr].alternativ == spmOgSvar[spmNr].RiktigSvar){
+                alert("riktig :)")
+                nesteSpm()
+            }
+          
+        }
+        function alternativer(alternativ){
+            inpSvar.value = alternativ
+            skjekkSvar()
+            inpSvar.value = ("")
+        }
+     
+        btnOK.addEventListener("click", skjekkSvar);//kobler btnOK knappen til funskjeone
+
+        function nesteSpm(){
+            if(spmNr < spmOgSvar.length-1){
+                spmNr ++// eller spmNr= spmNr + 1
+                
+            }
+            settOppSkjermbilde()
+            if(spmNr == spmOgSvar.length-1){
+                btnNeste.disabled = true;
+            }
+            btnForrige.disabled = false;
+
+        }
+        btnNeste.addEventListener("click", nesteSpm);
+
+        function forrigeSpm(){
+            if(spmNr > 0){
+                spmNr --// eller spmNr= spmNr - 1
+                settOppSkjermbilde()
+            }
+            if (spmNr == 0){
+                btnForrige.disabled = true;
+            }
+            btnNeste.disabled = false;
+
+        }
+        btnForrige.addEventListener("click", forrigeSpm);
+
+        btnAdmin.addEventListener("click", adminFunksjon);
+
+        function adminFunksjon(){
+            btnAdmin.hidden = false
+            btnAdmin.removeEventListener("click", adminFunksjon);
+            btnAdmin.addEventListener("click", normalFunksjoner)
+            btnAdmin.innerHTML = "Gå tilbake til spørsmålmodus"
+            inpNyttSpmSvar.hidden = false
+            sporsmaal.innerHTML = "Skriv nytt spørsmål i første inputfelt, riktig svar i andre"
+            inpSvarTxt.innerHTML = ""
+            inpSvar.placeholder = "spørsmål"
+            inpNyttSpmSvar.placeholder = "svar"
+            Alt1.hidden = true
+            Alt2.hidden = true
+            Alt3.hidden = true
+            imgBilde.src = ""
+            imgBilde.alt = ""
+            btnNeste.hidden = true
+            btnForrige.hidden = true
+            btnOK.removeEventListener("click", skjekkSvar);
+            btnOK.addEventListener("click", leggInnNyttSpm);
+            btnOK.innerHTML = "Legg inn spørsmål"
+            nyttBilde.hidden = false
+            nyttBilde.placeholder = "Legg til blideadresse"
+        }
+
+        function normalFunksjoner(){
+            //kjører alt som trengs for å komme tilbake til normal kjøring
+         
+            inpSvar.placeholder = "Skriv svar her"
+            inpNyttSpmSvar.hidden = true
+            btnAdmin.innerHTML = "Bli administrator"
+            btnAdmin.addEventListener("click", adminFunksjon)
+            btnAdmin.hidden = true
+            btnOK.innerHTML = "Klikk når du er klar"
+            btnOK.removeEventListener("click", leggInnNyttSpm);
+            btnOK.addEventListener("click", skjekkSvar);
+            btnAdmin.hidden = true
+            nyttBilde.hidden = true
+            btnNeste.hidden = false
+            btnForrige.hidden = false
+            Alt1.hidden = false
+            Alt2.hidden = false
+            Alt3.hidden = false
+            inpSvarTxt.innerHTML = "Skriv 1, 2 eller 3 ved svar alternativer eller trykk på det:"
+            settOppSkjermbilde()
+        }
+
+        function leggInnNyttSpm(){
+            //Skal gjøre alt som skal til for å legge til nytt spørsmål
+            var nyttSpm = { a: inpSvar.value, RiktigSvar: inpNyttSpmSvar.value, alternativ:[ "","", ""], bilde: nyttBilde.value}
+            spmOgSvar.push(nyttSpm)
+        }
+
+        function knappeTrykk(evt){
+            var tallkode = evt.keyCode;
+            if (tallkode == 66){//når man trykkere b
+                btnAdmin.hidden = false
+            }
+            if (tallkode == 88){//når man trykkere x
+                btnAdmin.hidden = true
+            }
+        }
+        document.addEventListener("keydown", knappeTrykk)
+
+    </script>
+</body>
+</html>
