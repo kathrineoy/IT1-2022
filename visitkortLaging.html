@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visittkort </title>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-areas: "t t t t t"
+                "v . h h h"
+                "v . h h h";
+        }
+
+        #visittkort {
+            border: 1px solid black;
+            background-color: lightblue;
+            border-radius: 5px;
+            width: 500px;
+            height: 300px;
+            padding: 10px;
+            grid-area: h;
+        }
+
+        input,
+        select,
+        button {
+            display: block;
+            margin-top: 5px;
+            padding: 5px;
+            width: 200px;
+            font-size: 16px;
+        }
+
+        #bakfarge {
+            width: 50px;
+            padding: 2px;
+        }
+
+        h2,
+        h3,
+        p {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        h1 {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+            grid-area: t;
+        }
+
+        #looks {
+            grid-column: span 1;
+            opacity: 0;
+        }
+
+        #lagingAvKort {
+            margin-top: -190px;
+            grid-area: v;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Lag ditt eget visittkort</h1>
+
+    <div id="lagingAvKort">
+        <label for="nanv">
+            <h3>Fult navn:</h3>
+        </label>
+        <input type="text" name="navn" id="navn" placeholder="Kathrine Øyno">
+        <label for="adresse">
+            <h3>Epost:</h3>
+        </label>
+        <input type="text" name="epost" id="epost" placeholder="johan.andresen@gmail.com">
+        <label for="kjønn">
+            <h3>Kjønn:</h3>
+        </label>
+        <select name="kjønn" id="kjønn">
+            <option value="kvinne">Kvinne</option>
+            <option value="mann">Mann</option>
+            <option value="annet">Annet</option>
+        </select>
+        <div id="looks">0</div>
+        <label for="jobb">
+            <h3>Firma:</h3>
+        </label>
+        <input type="text" name="jobb" id="jobb">
+        <label for="bursdag">
+            <h3>Fødselsdagen din</h3>
+        </label>
+        <input type="date" name="bursdag" id="bursdag">
+
+        <!--<div class="checkbox">
+        <h3>Ramme</h3>
+        <label for="hel">
+            <input type="checkbox" name="hel" value="hel"> Hel
+        </label><br>
+        <label for="hel">
+            <input type="checkbox" name="tynn" value="tynn"> Tynn
+        </label><br>
+        <label for="hel">
+            <input type="checkbox" name="prikkete" value="prikkete"> Prikkete
+        </label>
+    </div>-->
+    <label for="bilde"><h3>Bilde</h3></label>
+    <input type="file" name="bilde" id="bilde">
+        <label for="farge">
+            <h3>Velg bakgrunnsfarge </h3>
+        </label>
+        <input type="color" name="farge" id="bakfarge">
+        <br>
+        <button type="button" onclick="genererVisittkort()"> Vis kort </button>
+    
+    </div>
+ 
+
+    <div id="visittkort" style="display: none;">
+        <h2 id="visittkort-navn"> </h2>
+        <p id="visittkort-jobb"></p>
+        <p id="visittkort-epost"></p>
+        <p id="visittkort-kjønn"></p>
+        <p id="visittkort-bursdag"></p>
+    </div>
+
+    <script>
+        function genererVisittkort() {
+            // Hent verdier fra skjemen
+            var navn = document.getElementById("navn").value;
+            var jobb = document.getElementById("jobb").value;
+            var epost = document.getElementById("epost").value;
+            var kjønn = document.getElementById("kjønn").value;
+            var bursdag = document.getElementById("bursdag").value;
+
+            // Sett verdier i visittkortet
+            document.getElementById("visittkort-navn").innerText = navn;
+            document.getElementById("visittkort-jobb").innerText = jobb;
+            document.getElementById("visittkort-epost").innerText = epost;
+            document.getElementById("visittkort-kjønn").innerText = kjønn;
+            document.getElementById("visittkort-bursdag").innerHTML = bursdag;
+
+            // Vis visittkortet
+            document.getElementById("visittkort").style.display = "block";
+        }
+    </script>
+</body>
+
+</html>
+
+
+<form action=""></form>
