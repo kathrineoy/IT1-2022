@@ -5,83 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Visittkort.css">
     <title>Visittkort vol.2</title>
-    <style>
-        body {
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            background-color: #c5c6d0;
-        }
-
-        #head {
-            display: grid;
-            grid-template-columns: 30% 10% auto 20%;
-            grid-template-rows: 80px auto;
-        }
-
-        input,
-        select,
-        button {
-            padding: 5px;
-            font-size: 16px;
-        }
-
-        #foorekort>label {
-            display: block;
-        }
-
-        #foorekort {
-            display: none;
-        }
-
-        .topp {
-            text-align: center;
-            border: 1px solid;
-            background-color: black;
-            color: white;
-            padding: 5px;
-        }
-
-        #visittkort {
-            border: 2px solid black;
-            box-shadow: inset;
-            background-color: white;
-            border-radius: 5px;
-            width: 500px;
-            height: 300px;
-            padding: 10px;
-            margin-top: 200px;
-        }
-
-        #lagingAvKort {
-            border: 0px solid;
-            height: 900px;
-            padding: 20px;
-            background-color: #a08679;
-            border-radius: 5px;
-        }
-
-        #bakfarge {
-            padding: 2px;
-
-        }
-
-        #visittkort-bilde {
-            height: 200px;
-            position: absolute;
-            left: 800px;
-            top: 375px;
-            border: 1px solid;
-            border-radius: 5px;
-        }
-
-        #visittkort>h2 {
-            text-decoration: underline;
-        }
-
-        #visittkort>h3 {
-            text-decoration: underline;
-        }
-    </style>
 </head>
 
 <body>
@@ -89,113 +14,116 @@
 
     <div class="topp">
         <h1>Lag ditt eget visittkort</h1>
+        <p style="display:none; color: white;" id="faktaboks">Etter du har laget kortet kan du endre på informasjonen hvis den er feil ved å skrive rett inn på kortet</p>
     </div>
-
     <div id="head">
+        <form id="lagingAvKort">
+                <label>
+                    <h3>Fult navn:</h3>
+                    <input type="text" id="inpNavn" required placeholder="Kathrine Øyno">
+                </label>
+                <label>
+                    <h3>E-post:</h3>
+                    <input type="text" id="inpEpost" required placeholder="johan.andresen@gmail.com">
+                </label>
+                <label>
+                    <h3>Kjonn:</h3>
+                    <select id="inpKjonn" required>
+                        <option value="annet">Annet</option>
+                        <option value="kvinne">Kvinne</option>
+                        <option value="mann">Mann</option>
+                    </select>
+                </label>
+                <label>
+                    <h3>Telefon nummer:</h3>
+                    <input type="text" id="inpTelefon" required placeholder="21436587" min="1" maxlength="8">
+                    <!--Bestemmer lengden på nummeret-->
+                </label>
+                <label>
+                    <h3>Firma:</h3>
+                    <input type="text" id="inpJobb" required placeholder="Protan">
+                </label>
+                <label>
+                    <h3>Fødselsdagen din:</h3>
+                    <input type="date" id="inpBursdag" required>
+                </label>
+                <div id="foorekort">
+                    <h3>Har du førekort?</h3>
+                    <label for="ja">
+                        <input type="checkbox" value="Ja" id="inpJaF" name="ja"> Ja
+                    </label>
+                    <label for="nei">
+                        <input type="checkbox" value="Nei" id="inpNeiF" name="nei"> Nei
+                    </label>
+                </div>
 
-        <div id="lagingAvKort">
-            <label>
-                <h3>Fult navn:</h3>
-                <input type="text" id="inpNavn" placeholder="Kathrine Øyno">
-            </label>
-            <label>
-                <h3>E-post:</h3>
-                <input type="text" id="inpEpost" placeholder="johan.andresen@gmail.com">
-            </label>
-            <label>
-                <h3>Kjønn:</h3>
-                <select id="inpKjønn">
-                    <option value="annet">Annet</option>
-                    <option value="kvinne">Kvinne</option>
-                    <option value="mann">Mann</option>
-                </select>
-            </label>
-            <label>
-                <h3>Telefon nummer:</h3>
-                <input type="text" id="inpTelefon" placeholder="21436587" min="1" maxlength="8">
-                <!--Bestemmer lengden på nummeret-->
-            </label>
-            <label>
-                <h3>Firma:</h3>
-                <input type="text" id="inpJobb" placeholder="Protan">
-            </label>
-            <label>
-                <h3>Fødselsdagen din:</h3>
-                <input type="date" id="inpBursdag">
-            </label>
-            <div id="foorekort">
-                <h3>Har du førekort?</h3>
-                <label for="ja">
-                    <input type="checkbox" value="Ja" id="inpJaF" name="ja"> Ja
+                <label>
+                    <h3>Bilde(obligatorisk 😆)</h3>
+                    <input type="file" id="inpBilde">
                 </label>
 
-                <label for="nei">
-                    <input type="checkbox" value="Nei" id="inpNeiF" name="nei"> Nei
+                <label>
+                    <h3>Velg bakgrunnsfarge </h3>
+                    <input type="color" id="bakfarge">
                 </label>
-            </div>
-
-            <label>
-                <h3>Bilde(obligatorisk 😆)</h3>
-                <input type="file" id="inpBilde">
-            </label>
-
-            <label>
-                <h3>Velg bakgrunnsfarge </h3>
-                <input type="color" id="bakfarge">
-            </label>
-            <br>
-            <button type="button" onclick="genererVisittkort()"> Vis kort </button>
-        </div>
-
-        <div></div>
+                <br>
+                <button type="submit" id="visKort"> Vis kort </button>
+        </form>
 
         <div id="visittkort" style="display: none;" id="visittkort-farge">
             <div>
                 <img src="" alt="Bilde av " + visittkort-navn id="visittkort-bilde">
             </div>
-            <h2 id="visittkort-jobb"></h2>
-            <h3 id="visittkort-navn"> </h3>
-            <p id="visittkort-epost"></p>
-            <p id="visittkort-telefon"></p>
-            <p id="visittkort-kjønn"></p>
-            <p id="visittkort-bursdag"></p>
-            <p id="visittkort-foorekort"></p>
+            <!--contenteditable="true" gjør at man kan skrive rett inn i kortet hvis man vil endre på noe uten å måtte "generere" ett helt nytt kort-->
+            <h2 id="visittkort-jobb" contenteditable="true"></h2>
+            <h3 id="visittkort-navn" contenteditable="true"></h3>
+            <p id="visittkort-epost" contenteditable="true"></p>
+            <p id="visittkort-telefon" contenteditable="true"></p>
+            <p id="visittkort-kjonn" contenteditable="true"></p>
+            <p id="visittkort-bursdag" contenteditable="true"></p>
+            <p id="visittkort-foorekort" contenteditable="true"></p>
 
         </div>
     </div>
 
     <script>
+        //Henter vareablene fra HTML
+        var lagingAvKort = document.getElementById("lagingAvKort");
         var inpNavn = document.getElementById("inpNavn");
         var inpJobb = document.getElementById("inpJobb");
         var inpEpost = document.getElementById("inpEpost");
-        var inpKjønn = document.getElementById("inpKjønn");
+        var inpKjonn = document.getElementById("inpKjonn");
         var inpTelefon = document.getElementById("inpTelefon");
         var inpBilde = document.getElementById("inpBilde");
         var inpBursdag = document.getElementById("inpBursdag");
         var inpNeiF = document.getElementById("inpNeiF");
         var inpJaF = document.getElementById("inpJaF");
         var bakfarge = document.getElementById("bakfarge");
+        var visKort = document.getElementById("visKort")
         bakfarge.value = "#ffffff";
 
-        //Skjekker om datoen som er valgt er over 18 år siden eler ikke
+        //Skjekker om bursdagen som er valgt er over 18 år siden eller ikke
         inpBursdag.onchange = function () {
             let dateToday = new Date()
             let str18Ago = (dateToday.getFullYear() - 18) + "-" + (dateToday.getMonth() + 1) + "-" + dateToday.getDate()
             let date18Ago = new Date(str18Ago)
             let bursdag = new Date(inpBursdag.value)
+            //gjør at hvis brusdagen din var 18 år siden eller mer kommer alternativet om førekort opp
             if (bursdag < date18Ago) {
                 var foorekort = document.getElementById("foorekort")
                 foorekort.style.display = "block"
             }
         }
-
-        function genererVisittkort() {
+        //ved bruken av form trenger det ikke å aktivere kanppen 
+        lagingAvKort.onsubmit = function(event) {
+            event.preventDefault()
             //legger inn bilder
             let bilde = document.getElementById('visittkort-bilde');
             bilde.src = URL.createObjectURL(inpBilde.files[0]);
 
+            //skjekker om kanpene til førekort er checked eller ikke og hvis ja eller nel kjøres funksjonene under
             if (inpNeiF.checked) {
-                document.getElementById("visittkort-foorekort").innerHTML = "Førekort: Nei"
+                document.getElementById("visittkort-foorekort").innerHTML = ""
             }
             if (inpJaF.checked) {
                 document.getElementById("visittkort-foorekort").innerHTML = "Førekort: Ja"
@@ -203,16 +131,18 @@
             // Sett verdier i visittkortet
             console.log(inpNavn)
             document.getElementById("visittkort-navn").innerText = inpNavn.value;
-            document.getElementById("visittkort-jobb").innerText = "Firma: " + inpJobb.value;
-            document.getElementById("visittkort-epost").innerText = inpEpost.value;
-            document.getElementById("visittkort-kjønn").innerText = inpKjønn.value;
+            document.getElementById("visittkort-jobb").innerText = inpJobb.value;
+            document.getElementById("visittkort-epost").innerText = "Epost: " + inpEpost.value;
+            document.getElementById("visittkort-kjonn").innerText = inpKjonn.value;
             document.getElementById("visittkort-bursdag").innerHTML = inpBursdag.value;
             document.getElementById("visittkort-telefon").innerHTML = "Telefon: " + inpTelefon.value;
 
 
-            // Vis visittkortet
+            // Viser visittkortet
             visittkort.style.backgroundColor = bakfarge.value;
             document.getElementById("visittkort").style.display = "block";
+            //gjør den lille teksten under tittelen synelig 
+            document.getElementById("faktaboks").style.display = "block";
         }
     </script>
 </body>
