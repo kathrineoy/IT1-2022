@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+        }
+
+        #str {
+            position: absolute;
+            right: 5%;
+            top: 8%;
+        }
+
+        #strF {
+            position: absolute;
+            right: 5%;
+            top: 2%;
+        }
+
+        #tittel {
+            position: absolute;
+            right: 37%;
+        }
+
+        #tid {
+            position: absolute;
+            right: 50%;
+        }
+
+        #startSpill {
+            position: absolute;
+            right: 52%;
+        }
+    </style>
+</head>
+
+<body>
+        <h1 id="tittel" class="ikkePrikk">Trykk på skjermen for å starte spillet</h1>
+        <input type="color" name="farge" id="farge" class="ikkePrikk">
+        <audio id="fjernLyd" src="BloppLyd.m4a"></audio>
+        <br><br>
+        <h2 class="ikkePrikk" id="tid"> Tid igjen: 15</h2>
+        <h2 class="ikkePrikk" id="png"> Poeng:</h2>
+        <button id="startSpill"> Start spill</button>
+        <h2 id="poengHTML" class="ikkePrikk">0</h2>
+        <h3 id="strF" class="ikkePrikk">Fromen til figuren</h3>
+        <input type="range" name="str" min="1" max="80" value="40" id="str">
+
+
+    <script>
+        var farge = document.getElementById("farge");
+        var ny = true;
+        var strF = document.getElementById("strF");
+        var str = document.getElementById("str")
+        var fjernLyd = document.getElementById("fjernLyd");
+        var png = document.getElementById("png")
+        fjernLyd.playbackRate = 2.5;
+        farge.value = "#d596ff";
+        var poeng = 0;
+        var ikkePrikk = document.getElementsByClassName("ikkePrikk");
+        var timeLeft = 0;
+        var timeId;
+        var startSpill = document.getElementById("startSpill")
+        var kjor
+
+        //funksjonen som fjerner prikkene
+        var fjern = function (evt) {
+            evt.stopPropagation();
+            if (!ny) {
+                fjernLyd.play();
+                poeng = poeng + 1
+                poengHTML.innerHTML = poeng
+                var minAnim = evt.target.animate([{ transform: "scale(1)" }, { transform: "scale(2)" }], 500);
+                minAnim.onfinish = function () {
+                    document.body.removeChild(evt.target);
+                }
+            }
+            ny = false;
+        }
+
+        startSpill.onclick = function () {
+            timeLeft = 15;
+            timeId = setInterval(function () {
+                timeLeft--;
+                document.getElementById("tid").innerHTML = "Tid igjen: " + timeLeft;
+                if (timeLeft <= 0) {
+                    sluttSpill()
+                }
+            }, 1000);
+            always()
+        }
+
+        //Funksjonen som gjør at bruker kan lage prikkene selv
+        window.onclick = function (evt) {
+            if (evt.clientY < 210) {
+                return
+            }
+            ny = true
+            var mittElement = document.createElement("div");
+            var str = document.getElementById("str")
+            var defaultVal = str.defaultValue;//definerer størelsen til prikkene
+            var currentVal = str.value;
+            mittElement.style.top = evt.clientY - 25 + "px";//høyden til skjemen
+            mittElement.style.left = evt.clientX - 25 + "px";//langs skjermen
+            mittElement.style.backgroundColor = farge.value;
+            mittElement.onmouseover = fjern;
+            mittElement.style.borderRadius = currentVal + "%";
+            document.body.appendChild(mittElement);
+        }
+
+
+        //funskjonen som gjør at prikkene kommer hele tiden
+        function always() {
+            kjor = setTimeout(() => { always(); }, 200); //en funksjon som utfører funskjeone i gjen etter 700 ms 
+            //funksjonen under gjør at prikkene ikke kommer over til dit teksten er 
+            let coords = [Math.random() * (screen.width - 60), Math.random() * (screen.height - 150)];
+            while (2000 < coords[0] < 100 && coords[1] < 210) {
+                coords[0] = [Math.random() * (screen.width - 60)];//x-verdien
+                coords[1] = [Math.random() * (screen.height - 150)];//y-verdien
+            }
+            var mittElement = document.createElement("div");
+            var str = document.getElementById("str")
+            var defaultVal = str.defaultValue;
+            var currentVal = str.value;
+            mittElement.style.top = coords[1] + "px";
+            mittElement.style.left = coords[0] + "px";
+            mittElement.style.backgroundColor = farge.value;
+            mittElement.onmouseover = fjern;
+            mittElement.style.borderRadius = currentVal + "%";
+            document.body.appendChild(mittElement);
+        }
+
+        function sluttSpill() {
+            clearTimeout(kjor);
+            timeLeft = 1;
+            document.body.innerHTML = "<h1>Tiden er ute</h1> <h2>Din poengsum er: " + poeng + "</h2>"
+        }
+
+
+    </script>
+
+</body>
+
+</html>
