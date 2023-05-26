@@ -47,7 +47,7 @@
         <input type="color" name="farge" id="farge" class="ikkePrikk">
         <audio id="fjernLyd" src="BloppLyd.m4a"></audio>
         <br><br>
-        <h2 class="ikkePrikk" id="tid"> Tid igjen: 15</h2>
+        <h2 class="ikkePrikk" id="tid"> Tid igjen: 20</h2>
         <h2 class="ikkePrikk" id="png"> Poeng:</h2>
         <button id="startSpill"> Start spill</button>
         <h2 id="poengHTML" class="ikkePrikk">0</h2>
@@ -87,7 +87,7 @@
         }
 
         startSpill.onclick = function () {
-            timeLeft = 15;
+            timeLeft = 20;
             timeId = setInterval(function () {
                 timeLeft--;
                 document.getElementById("tid").innerHTML = "Tid igjen: " + timeLeft;
