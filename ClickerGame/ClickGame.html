@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicks game</title>
+    <link rel="stylesheet" href="ClickerGame.css">
+
+</head>
+
+<body>
+    <div class="head">
+        <center>
+            <p> Poeng: <span id="poeng">0</span></p>
+            <br>
+            <div id="klikk">
+                <img src="frosk_lv1.png" alt="" id="klikkBilde">
+            </div>
+        </center>
+    </div>
+
+    <div class="shopp">
+        <div id="oppdaterPoeng">
+            <p>For å få flere poeng per klikk: <span id="poengPrisInp">20</span></p>
+            <p>Antall poeng per klikk: <span id="poengPrKlikkInp">1</span></p>
+        </div>
+        <div id="faaHjelp">
+            <p>Hjelp med tid: <span id="automatiskPrisInp">40</span></p>
+            <p>Hvor mange hjelpere du har: <span id="automatiskHjelpInp"> 0 </span></p>
+        </div>
+    </div>
+
+    <div id="kjopMeny">
+        <a href="javascript:void(0)" id="closeBtn">&times;</a>
+        <table>
+            <!-- Jeg vet at du ikke liker når vi blander java script med HTML, men jeg fant ingen annen løsning å fiske bilde/carakterskiftet på -->
+            <tr>
+                <td> <img src="frosk_lv1.png" alt="frosk lv.1" onclick="byttBilde(0,0)"> <br> 0p <br></td>
+                <td> <img src="frosk_lv2.png" alt="frosk lv.2" onclick="byttBilde(0,1)"> <br> 25p <br></td>
+                <td> <img src="frosk_lv3.png" alt="frosk lv.3" onclick="byttBilde(0,2)"> <br> 50p <br></td>
+                <td><img src="frosk_lv4.png" alt="frosk lv.4" onclick="byttBilde(0,3)"> <br> 75p <br></td>
+                <td> <img src="frosk_lv5.png" alt="frosk lv.5" onclick="byttBilde(0,4)"> <br> 100p <br></td>
+            </tr>
+            <tr>
+                <td> <img src="and.png" alt="and lv.1" onclick="byttBilde(1,0)"> <br> 100p <br></td>
+                <td> <img src="flueSoppAnd.png" alt="and lv.2" onclick="byttBilde(1,1)"> <br> 125p <br></td>
+                <td><img src="SloyfeAnd.png" alt="and lv.3" onclick="byttBilde(1,2)"> <br> 150p <br></td>
+                <td> <img src="dressAnd.png" alt=" and lv.4" onclick="byttBilde(1,3)"> <br> 175p <br></td>
+                <td> <img src="ferdigAnd.png" alt="and lv.5" onclick="byttBilde(1,4)"> <br> 200p <br></td>
+            </tr>
+            <tr>
+                <td> <img src="skilpadde.png" alt="skilpadde lv.1" onclick="byttBilde(2,0)"> <br> 200p <br></td>
+                <td> <img src="steinSkilpadde.png" alt="skilpadde lv.2" onclick="byttBilde(2,1)"> <br> 250p <br></td>
+                <td><img src="bursdaghattSkilpadde.png" alt="skilpadde lv.3" onclick="byttBilde(2,2)"> <br> 300p <br>
+                </td>
+                <td> <img src="tungeSkilpadde.png" alt="skilpadde lv.4" onclick="byttBilde(2,3)"> <br> 350p <br></td>
+                <td> <img src="ferdigSkilpadde.png" alt="skilpadde lv.5" onclick="byttBilde(2,4)"> <br> 400p <br></td>
+            </tr>
+            <tr>
+                <td> <img src="kanin.png" alt="kanin lv.1" onclick="byttBilde(3,0)"> <br> 400p <br></td>
+                <td> <img src="gressKanin.png" alt="kanin lv.2" onclick="byttBilde(3,1)"> <br> 500p <br></td>
+                <td><img src="kroneKanin.png" alt="kanin lv.3" onclick="byttBilde(3,2)"> <br> 600p <br></td>
+                <td> <img src="gullerotKanin.png" alt="kanin lv.4" onclick="byttBilde(3,3)"> <br> 700p <br></td>
+                <td> <img src="ferdigKanin.png" alt="kanin lv.5" onclick="byttBilde(3,4)"> <br> 800p <br></td>
+            </tr>
+            <tr>
+                <td> <img src="bever.png" alt="bever lv.1" onclick="byttBilde(4,0)"> <br> 800p <br></td>
+                <td> <img src="trestubbeBever.png" alt="bever lv.2" onclick="byttBilde(4,1)"> <br> 1000p <br></td>
+                <td><img src="tennerBever.png" alt="bever lv.3" onclick="byttBilde(4,2)"> <br> 3000p <br></td>
+                <td> <img src="motorsagBever.png" alt="bever lv.4" onclick="byttBilde(4,3)"> <br> 5000p <br></td>
+                <td> <img src="ferdigBever.png" alt="bever lv.5" onclick="byttBilde(4,4)"> <br> 7000p <br></td>
+            </tr>
+            <tr>
+                <td> <img src="fugl.png" alt="fugl lv.1" onclick="byttBilde(5,0)"> <br> 16000p <br></td>
+                <td> <img src="pinneFugl.png" alt="fugl lv.2" onclick="byttBilde(5,1)"> <br> 17000p <br></td>
+                <td><img src="regnbueFugl.png" alt="fugl lv.3" onclick="byttBilde(5,2)"> <br> 18000p <br></td>
+                <td> <img src="regnbuebrillerFugl.png" alt="fugl lv.4" onclick="byttBilde(5,3)"> <br> 19000p <br></td>
+                <td> <img src="ferdigFugl.png" alt="fugl lv.5" onclick="byttBilde(5,4)"> <br> 20000p <br></td>
+            </tr>
+            <tr>
+                <td> <img src="krokodille.png" alt="krokdille lv.1" onclick="byttBilde(6,0)"> <br> 100000p <br></td>
+                <td> <img src="vanndamKrokodille.png" alt="krokdille lv.2" onclick="byttBilde(6,1)"> <br> 110000p <br>
+                </td>
+                <td><img src="smokkKrokodille.png" alt="krokdille lv.3" onclick="byttBilde(6,2)"> <br> 120000p <br></td>
+                <td> <img src="vingerKrokodille.png" alt="krokdille lv.4" onclick="byttBilde(6,3)"> <br> 130000p <br>
+                </td>
+                <td> <img src="ferdigKrokodille.png" alt="krokdille lv.5" onclick="byttBilde(6,4)"> <br> 150000p <br>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <span style="font-size:30px;cursor:pointer" id="openBtn"><img src="handlevogn.png" alt=""></span>
+
+    <script>
+        let klikk = document.getElementById("klikk");
+        let oppdaterPoeng = document.getElementById("oppdaterPoeng");
+        let faaHjelp = document.getElementById("faaHjelp");
+        let closeBtn = document.getElementById("closeBtn");
+        let openBtn = document.getElementById("openBtn");
+        let klikkBilde = document.getElementById("klikkBilde");
+        Poeng = 0;
+        let poengPris = 20;
+        let poengPrKlikk = 1;
+        let automatiskPris = 40;
+        let automatiskHjelp = 0;
+        let minusPris = 0;
+        var figurerPris = [
+            { figur: "frosk", pris: [0, 25, 50, 75, 100] },
+            { figur: "and", pris: [100, 125, 150, 175, 200] },
+            { figur: "skilpadde", pris: [200, 250, 300, 350, 400] },
+            { figur: "kanin", pris: [400, 500, 600, 700, 800] },
+            { figur: "bever", pris: [800, 1000, 3000, 5000, 7000] },
+            { figur: "fugl", pris: [16000, 17000, 18000, 19000, 20000] },
+            { figur: "krokodille", pris: [100000, 110000, 120000, 130000, 150000] }
+        ];
+        var figurerBilde = [
+            { figur: "frosk", bilde: ["frosk_lv1.png", "frosk_lv2.png", "frosk_lv3.png", "frosk_lv4.png", "frosk_lv5.png"] },
+            { figur: "and", bilde: ["and.png", "flueSoppAnd.png", "SloyfeAnd.png", "dressAnd.png", "ferdigAnd.png"] },
+            { figur: "skilpadde", bilde: ["skilpadde.png", "steinSkilpadde.png", "bursdaghattSkilpadde.png", "tungeSkilpadde.png", "ferdigSkilpadde.png"] },
+            { figur: "kanin", bilde: ["kanin.png", "gressKanin.png", "kroneKanin.png", "gullerotKanin.png", "ferdigKanin.png"] },
+            { figur: "bever", bilde: ["bever.png", "trestubbeBever.png", "tennerBever.png", "motorsagBever.png", "ferdigBever.png"] },
+            { figur: "fugl", bilde: ["fugl.png", "pinneFugl.png", "regnbueFugl.png", "regnbuebrillerFugl.png", "ferdigFugl.png"] },
+            { figur: "krokodille", bilde: ["krokodille.png", "vanndamKrokodille.png", "smokkKrokodille.png", "vingerKrokodille.png", "ferdigKrokodille.png"] }
+        ];
+
+        klikk.addEventListener("click", spill);
+        oppdaterPoeng.addEventListener("click", kjopPoeng);
+        faaHjelp.addEventListener("click", kjopHjelp);
+        openBtn.addEventListener("click", openMenu);
+        closeBtn.addEventListener("click", closeMenu);
+
+        // De to funksjonene under åpner og lukker menyen
+        function openMenu() {
+            document.getElementById("kjopMeny").style.width = "450px";
+        }
+
+        function closeMenu() {
+            document.getElementById("kjopMeny").style.width = "0";
+        }
+
+        //Denne funksjonen er den som kjøres når du trygger på knappen, den vil legge til antall mengde poeng du har "kjøpt" 
+        function spill() {
+            Poeng = Poeng + poengPrKlikk
+
+            document.getElementById("poeng").innerHTML = Poeng
+        }
+
+        function byttBilde(figur, niva) {
+            let pris = figurerPris[figur].pris[niva];
+            if (Poeng >= pris) {
+                let bilde = figurerBilde[figur].bilde[niva];
+                klikkBilde.src = bilde
+                figurerPris[figur].pris[niva] = 0
+                Poeng = Poeng - pris
+                document.getElementById("poeng").innerHTML = Poeng
+            }
+            else {
+                alert("for lite poeng for å kunne kjøpe karakteren")
+            }
+        }
+
+        //Denne funskjonen gør det mulig å kjøpe felre poeng hvert klikk, men den har ingen annen funskjon enn det
+        function kjopPoeng() {
+            if (Poeng >= poengPris) {
+                Poeng = Poeng - poengPris;
+                poengPrKlikk = poengPrKlikk + 1
+                poengPris = Math.round(poengPris * 1.5)
+
+                document.getElementById("poeng").innerHTML = Poeng
+                document.getElementById("poengPrisInp").innerHTML = poengPris
+                document.getElementById("poengPrKlikkInp").innerHTML = poengPrKlikk
+            }
+            else {
+                alert("for lite poeng for å kunne kjøpe")
+            }
+        }
+
+        //Denne gjør det mulig å kjøpe hjelp av maskinen, at den går automatisk
+        function kjopHjelp() {
+            if (Poeng >= automatiskPris) {
+                Poeng = Poeng - automatiskPris;
+                automatiskHjelp = automatiskHjelp + 1
+                automatiskPris = Math.round(automatiskPris * 2)
+
+                document.getElementById("poeng").innerHTML = Poeng
+                document.getElementById("automatiskPrisInp").innerHTML = automatiskPris
+                document.getElementById("automatiskHjelpInp").innerHTML = automatiskHjelp
+            }
+            if (automatiskHjelp >= 1) {
+                setInterval(function () {
+                    Poeng = Poeng + poengPrKlikk
+                    document.getElementById("poeng").innerHTML = Poeng
+                }, 750)
+            }
+            else {
+                alert("for lite poeng for å kunne kjøpe karakteren")
+            }
+        }
+    </script>
+
+</body>
+
+</html>
