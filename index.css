@@ -1,0 +1,216 @@
+
+body {
+    background: linear-gradient(-45deg, #ffe278, #c578ff, #ff78b3, #b3ff78);
+    background-size: 5000% 5000%;
+    animation: gradient 10s ease infinite;
+    text-align: center;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.topp {
+    width: 60%;
+    padding: 40px;
+    border: 2px solid #cccccc;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+}
+
+h1, h2 {
+    transform: rotate(0deg);
+    /*   "utgangspunktet" eller "default"    */
+    transition-duration: 1000ms;
+    /* kan angis i sekunder eller millisekunder  */
+}
+
+h1:hover {
+    transform: rotate(360deg);
+    /* kan angis i "deg"(grader) eller "turn"(antall omdreininger)  */
+}
+
+.menu{
+    display: grid;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    border: 0px;
+
+
+}
+.menu div{
+    height: 50px;
+
+}
+div {
+    color: black;
+    padding: 14px;
+    border: 1px solid;
+    border-radius: 10px;
+    font-family: 'Times New Roman', Times, serif; 
+    margin: 15px;
+    flex-grow: 1;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+}
+a:hover{
+    font-size: larger;
+    color: white;
+}
+#hoved {
+    margin-left: 25px;
+    margin-right: 25px;
+    padding: 40px;
+    border: 2px solid #cccccc;
+    border-radius: 20px;
+    background:
+    radial-gradient(beige, transparent),
+    radial-gradient(beige , transparent),
+    linear-gradient(rgba(255, 255,255 ,0.3), transparent 0),
+    linear-gradient(45deg, transparent 74px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 77px, transparent 109px),
+    linear-gradient(-45deg, transparent 75px, transparent 76px, #a4a4a4 76px, #a4a4a4 77px, transparent 78px, transparent 109px),
+    rgba(255, 255, 255, 0.5);
+    background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
+    background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px; 
+}
+
+#lekeplass:hover {
+    background-image: url(https://i.gifer.com/5EjY.gif);
+    height: 50px;
+    width: 250px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    
+}
+#maanen:hover {
+    background-image: url(https://i.gifer.com/IU5Z.gif);
+    height: 50px;
+    width: 250px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+#meny:hover {
+    background-image: url(https://i.gifer.com/MQr.gif);
+    height: 50px;
+    width: 250px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+#ol:hover {
+    background-image: url(https://i.gifer.com/Au0.gif);
+    height: 50px;
+    width: 250px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+#pixelKunst:hover {
+    background-image: url(https://i.gifer.com/IOTo.gif);
+    height: 50px;
+    width: 250px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+#periodesystemet:hover {
+    background-image: url(https://i.gifer.com/Eqw.gif);
+    height: 50px;
+    width: 250px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+#passord:hover {
+    background-image: url(https://i.gifer.com/1lOb.gif);
+    height: 50px;
+    width: 250px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+#skuddaar:hover {
+    background-image: url(https://i.gifer.com/1VZ.gif);
+    height: 50px;
+    width: 250px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+#oppgaver:hover {
+    background-image: url(https://i.gifer.com/8q4.gif);
+    height: 50px;
+    width: 250px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+#yatzy:hover {
+    background-image: url(https://i.gifer.com/Tabh.gif);
+    height: 50px;
+    width: 250px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+#spooreprogram:hover {
+    background-image: url(https://i.gifer.com/1Vk5.gif);
+    height: 50px;
+    width: 250px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+#blippSpill:hover {
+    background-image: url(https://i.gifer.com/A6AY.gif);
+    height: 50px;
+    width: 250px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+#visittkort:hover {
+    background-image: url(https://i.gifer.com/DfSc.gif);
+    height: 50px;
+    width: 250px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+#kryptering:hover {
+    background-image: url(https://i.gifer.com/24rf.gif);
+    height: 50px;
+    width: 250px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+#ClickerGame:hover {
+    background-image: url(https://i.gifer.com/Qv5L.gif);
+    height: 50px;
+    width: 250px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+
